@@ -5,8 +5,15 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "DejaVu Sans Mono-14:style=regular";
-/* static char *font2[] = { }; */
+
+static char *font = "Noto Sans Mono:size=12.75:style=ExtraCondensed Light";
+static char *font2[] =
+{
+  "Illusion N:size=13.5",
+  "Symbols Nerd Font:size=13.5:style=2048-em",
+  "Noto Sans CJK JP:size=13.5:style=Light"
+};
+
 static int borderpx = 1;
 
 /*
