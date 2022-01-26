@@ -10,9 +10,9 @@
 static char *font = "Noto Sans Mono:size=11.25:style=ExtraCondensed Light";
 static char *font2[] =
 {
-  "Illusion N:size=12.75",
-  "Symbols Nerd Font:size=12.75:style=2048-em",
-  "Noto Sans CJK JP:size=12.75:style=Light"
+  "Illusion N:size=12",
+  "Symbols Nerd Font:size=12:style=2048-em",
+  "Noto Sans CJK JP:size=12:style=Light"
 };
 
 static int borderpx = 1;
