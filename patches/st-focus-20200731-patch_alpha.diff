@@ -23,18 +23,13 @@ index b94b23c..577d1f1 100644
  
  /* Terminal colors (16 first used in escape sequence) */
  static const char *colorname[] = {
-@@ -123,9 +123,10 @@ static const char *colorname[] = {
-  * foreground, background, cursor, reverse cursor
-  */
- unsigned int defaultfg = 7;
--unsigned int defaultbg = 258;
-+unsigned int defaultbg = 0;
- static unsigned int defaultcs = 256;
+@@ -123,5 +123,6 @@ unsigned int defaultfg = 258;
+ unsigned int defaultbg = 259;
+ unsigned int defaultcs = 256;
  static unsigned int defaultrcs = 257;
 +unsigned int bg = 17, bgUnfocused = 16;
  
  /*
-  * Default shape of cursor
 diff --git a/st.c b/st.c
 index 0ce6ac2..c7f40c8 100644
 --- a/st.c
@@ -59,23 +54,25 @@ index 2c656af..44cb3fd 100644
  void draw(void);
  
  void printscreen(const Arg *);
-@@ -122,4 +123,4 @@ extern char *termname;
+@@ -122,5 +123,5 @@ extern char *termname;
  extern unsigned int tabspaces;
  extern unsigned int defaultfg;
  extern unsigned int defaultbg;
+ extern unsigned int defaultcs;
 -extern float alpha;
 +extern float alpha, alphaUnfocused;
 diff --git a/x.c b/x.c
 index 50da23c..a2e820f 100644
 --- a/x.c
 +++ b/x.c
-@@ -254,6 +254,8 @@ static char *opt_line  = NULL;
+@@ -254,7 +254,9 @@ static char *opt_line  = NULL;
  static char *opt_name  = NULL;
  static char *opt_title = NULL;
  
 +static int focused = 0;
 +
- static int oldbutton = 3; /* button event on startup: 3 = release */
+ static uint buttons; /* bit field of pressed buttons */
+ static int cursorblinks = 0;
  
  void
 @@ -774,35 +776,38 @@ xloadcolor(int i, const char *name, Color *ncolor)

@@ -1,3 +1,4 @@
+#include <stddef.h>
 /* See LICENSE file for copyright and license details. */
 
 /*
@@ -6,12 +7,12 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 
-static char *font = "Noto Sans Mono:size=12.75:style=ExtraCondensed Light";
+static char *font = "Noto Sans Mono:size=11.25:style=ExtraCondensed Light";
 static char *font2[] =
 {
-  "Illusion N:size=13.5",
-  "Symbols Nerd Font:size=13.5:style=2048-em",
-  "Noto Sans CJK JP:size=13.5:style=Light"
+  "Illusion N:size=12.75",
+  "Symbols Nerd Font:size=12.75:style=2048-em",
+  "Noto Sans CJK JP:size=12.75:style=Light"
 };
 
 static int borderpx = 1;
@@ -107,7 +108,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.75, alphaUnfocused = 0.6;
+float alpha = 0.95, alphaUnfocused = 0.8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -136,7 +137,7 @@ static const char *colorname[] = {
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#c5c8c6",
 	"#1d1f21",
-	"#051a05"
+	"#030f03"
 };
 
 
@@ -146,7 +147,7 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 256;
 unsigned int defaultbg = 0;
-static unsigned int defaultcs = 256;
+unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 unsigned int bg = 258, bgUnfocused = 16;
 
