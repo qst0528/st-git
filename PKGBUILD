@@ -6,7 +6,7 @@
 # Contributor: Christoph Vigano <mail@cvigano.de>
 
 pkgname=st-git
-pkgver=0.8.3.r19.g9ba7ecf
+pkgver=0.8.5.r7.gef05519
 pkgrel=1
 pkgdesc='A simple virtual terminal emulator for X.'
 arch=('i686' 'x86_64' 'armv7h')
@@ -42,7 +42,7 @@ patch --directory="$_sourcedir" --strip=0 < terminfo.patch
 	if [ -d "$_startdir/patches" ]; then
 	        for patch in $_startdir/patches/*.diff; do
                         echo "Applying $patch ..."
-		        patch -p1 -s -i "$patch"
+		        patch -p1 --directory="$_sourcedir" -s -i "$patch"
 		done;
 	fi;
 
