@@ -54,13 +54,14 @@ index 2c656af..44cb3fd 100644
  void draw(void);
  
  void printscreen(const Arg *);
-@@ -122,5 +123,5 @@ extern char *termname;
+@@ -122,6 +123,6 @@ extern char *termname;
  extern unsigned int tabspaces;
  extern unsigned int defaultfg;
  extern unsigned int defaultbg;
  extern unsigned int defaultcs;
 -extern float alpha;
 +extern float alpha, alphaUnfocused;
+ extern const int boxdraw, boxdraw_bold, boxdraw_braille;
 diff --git a/x.c b/x.c
 index 50da23c..a2e820f 100644
 --- a/x.c

@@ -7,12 +7,19 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 
+/*
 static char *font = "Noto Sans Mono:size=11.25:style=ExtraCondensed Light";
 static char *font2[] =
 {
   "Illusion N:size=12",
   "Symbols Nerd Font:size=12:style=2048-em",
   "Noto Sans CJK JP:size=12:style=Light"
+};
+*/
+static char *font = "Sarasa Term Slab J:size=11.25:style=Extralight";
+static char *font2[] =
+{
+  "Symbols Nerd Font:size=12:style=2048-em"
 };
 
 static int borderpx = 1;
